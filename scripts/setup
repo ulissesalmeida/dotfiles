@@ -1,0 +1,30 @@
+#!/bin/bash
+
+__dir__="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
+
+link_files() {
+  local root=$1;
+  local destination=$HOME;
+
+  if [ ! -d "$root/symlinks" ]; then
+    return 1
+  fi
+
+  for file in $(find $root/symlinks -type f -maxdepth 2); do
+    dotfile=${file/$root\/symlinks\//.}
+    echo "🔗  Linking '$dotfile'..."
+
+    mkdir -p $(dirname "$destination/$dotfile")
+    ln -sf $file "$destination/$dotfile"
+  done
+}
+
+create_directories() {
+  mkdir -p $HOME/projects/{personal,work}
+  echo "👉 Creating directories on '~/src'..."
+}
+
+link_files $__dir__
+create_directories
+
+echo "🎉  Done!"
