@@ -3,11 +3,15 @@
 link_files() {
   for i in $HOME/.dotfiles/*; do
     local base_name="$(basename $i)"
-    [[ $base_name =~ ^(LICENSE|script)$ ]] && continue
+    [[ $base_name =~ ^(LICENSE|script|bin)$ ]] && continue
     echo "👉 Linking $base_name..."
-    rm $HOME/.$base_name
+    [[ -h $HOME/.$base_name ]] && rm $HOME/.$base_name
     ln -sf $i $HOME/.$base_name
   done
+
+  echo "👉 Linking bin..."
+  [[ -h $HOME/bin ]] && rm $HOME/bin
+  ln -sf $HOME/.dotfiles/bin $HOME/bin
 }
 
 create_directories() {

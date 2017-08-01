@@ -1,1 +1,2 @@
-for i in ~/.dotfiles/functions/*.sh ; do . $i ; done
+export PATH="$HOME/bin:$PATH"
+export EDITOR="atom -w -n"
