@@ -5,7 +5,8 @@ link_files() {
     local base_name="$(basename $i)"
     [[ $base_name =~ ^(LICENSE|script)$ ]] && continue
     echo "👉 Linking $base_name..."
-    ln -sf $i ~/.$base_name
+    rm $HOME/.$base_name
+    ln -sf $i $HOME/.$base_name
   done
 }
 
