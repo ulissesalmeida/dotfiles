@@ -1,21 +1,11 @@
 #!/bin/bash
 
-__dir__="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
-
 link_files() {
-  local root=$1;
-  local destination=$HOME;
-
-  if [ ! -d "$root/symlinks" ]; then
-    return 1
-  fi
-
-  for file in $(find $root/symlinks -type f -maxdepth 2); do
-    dotfile=${file/$root\/symlinks\//.}
-    echo "🔗  Linking '$dotfile'..."
-
-    mkdir -p $(dirname "$destination/$dotfile")
-    ln -sf $file "$destination/$dotfile"
+  for i in $HOME/.dotfiles/*; do
+    local base_name="$(basename $i)"
+    [[ $base_name =~ ^(LICENSE|script)$ ]] && continue
+    echo "👉 Linking $base_name..."
+    ln -sf $i ~/.$base_name
   done
 }
 
@@ -24,7 +14,7 @@ create_directories() {
   echo "👉 Creating directories on '~/projects'..."
 }
 
-link_files $__dir__
+link_files
 create_directories
 
 echo "🎉  Done!"
