@@ -21,7 +21,7 @@ link_files() {
 
 create_directories() {
   mkdir -p $HOME/projects/{personal,work}
-  echo "👉 Creating directories on '~/src'..."
+  echo "👉 Creating directories on '~/projects'..."
 }
 
 link_files $__dir__
