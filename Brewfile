@@ -3,10 +3,8 @@ brew 'bash-completion'
 brew 'git'
 brew 'hub'
 
-brew 'rbenv'
-brew 'ruby-build'
-brew 'nodenv'
-brew 'node-build'
+# For ASDF
+brew 'gpg'
 
 cask 'alfred'
 cask 'atom'

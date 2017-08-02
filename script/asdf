@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+source ${HOME}/.dotfiles/script/utils
+
+print_in_purple "ASDF setup\n"
+
+print_in_yellow "Installing ASDF\n"
+git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.3.0
+print_success "ASDF install done"
+
+print_in_yellow "Copying files to profile\n"
+echo -e '\n. $HOME/.asdf/asdf.sh' >> $HOME/.profile
+echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> $HOME/.profile
+print_success "Profile setup done \n"
+
+source $HOME/.profile
+print_in_yellow "Installing plugins\n"
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git && print_success "NodeJS"
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git && print_success "Ruby"
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git && print_success "Erlang"
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git && print_success "Elixir"
+bash $HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
+print_success "Plugins done \n"
+
+print_in_yellow "Install the languages \n"
+cd $HOME && asdf install
+
+print_success "ASDF setup done"
