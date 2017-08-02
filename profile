@@ -9,3 +9,4 @@ export EDITOR="atom -w -n"
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.dotfiles/script/prompt
+. $HOME/.dotfiles/script/aliases.sh
