@@ -39,6 +39,6 @@ function identifier() {
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_PS1_SHOWUPSTREAM=verbose
+export GIT_PS1_SHOWUPSTREAM=auto
 
 export PS1="\`identifier\` [\u:\w]`current_ruby`|`current_elixir`|`current_node``git_work` \`linebreak\`"
