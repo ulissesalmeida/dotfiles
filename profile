@@ -7,3 +7,5 @@ export EDITOR="atom -w -n"
 # ASDF
 . $HOME/.asdf/completions/asdf.bash
 . $HOME/.asdf/asdf.sh
+
+. $HOME/.dotfiles/script/prompt
