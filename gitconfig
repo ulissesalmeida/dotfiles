@@ -1,0 +1,27 @@
+[core]
+	excludesfile = ~/.gitignore
+[user]
+	name = Ulisses Almeida
+	email = anizark@gmail.com
+[credential]
+	helper = osxkeychain
+[github]
+	user = ulissesalmeida
+[push]
+	default = simple
+[pull]
+	default = rebase
+[fetch]
+	prune = true
+[alias]
+	ptec = !git config user.email ulisses.almeida@plataformatec.com.br
+	save = !git add -A && git commit -m wip
+	undo = reset --soft HEAD^
+[color]
+  ui = true
+  interactive = true
+  status = true
+  branch = true
+  diff = true
+[apply]
+  whitespace = fix
