@@ -22,4 +22,6 @@ create_directories() {
 link_files
 create_directories
 
+$HOME/.dotfiles/script/osx_customization
+
 echo "🎉  Done!"
