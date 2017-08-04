@@ -1,9 +1,10 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
-[user]
-	name = Ulisses Almeida
-	email = anizark@gmail.com
+[includeIf "gitdir:~/"]
+  path = .gitconfig-personal
+[includeIf "gitdir:~/projects/work/"]
+	path = .gitconfig-work
 [credential]
 	helper = osxkeychain
 [github]
