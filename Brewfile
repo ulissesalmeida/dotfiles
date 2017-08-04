@@ -2,6 +2,7 @@ brew 'bash'
 brew 'bash-completion'
 brew 'git'
 brew 'hub'
+brew 'ack'
 
 # For ASDF node
 brew 'gpg'
