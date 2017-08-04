@@ -3,7 +3,7 @@ brew 'bash-completion'
 brew 'git'
 brew 'hub'
 
-# For ASDF
+# For ASDF node
 brew 'gpg'
 
 cask 'alfred'
