@@ -1,25 +1,25 @@
 function current_ruby() {
-  echo -n '\[\033[1;31m\]'
+  echo -ne "\033[1;31m"
   echo -n $(asdf current ruby -v | sed -e 's/ .*//')
-  echo -n '\[\033[0m\]'
+  echo -ne "\033[0m"
 }
 
 function current_elixir() {
-  echo -n '\[\033[0;35m\]'
+  echo -ne '\033[0;35m'
   echo -n $(asdf current elixir -v | sed -e 's/ .*//')
-  echo -n '\[\033[0m\]'
+  echo -ne '\033[0m'
 }
 
 function current_node() {
-  echo -n '\[\033[0;32m\]'
+  echo -ne '\033[0;32m'
   echo -n $(asdf current nodejs -v | sed -e 's/ .*//')
-  echo -n '\[\033[0m\]'
+  echo -ne '\033[0m'
 }
 
 function git_work() {
-   echo -n '\[\033[0;33m\]'
+   echo -ne '\033[0;33m'
    echo -n $(__git_ps1)
-   echo -n '\[\033[0m\]'
+   echo -ne '\033[0m'
 }
 
 function linebreak() {
@@ -30,9 +30,9 @@ function linebreak() {
 function identifier() {
   local work=$(git config user.email | grep plataformatec)
   if [[ -z $work ]]; then
-    echo -n '🏡'
+    echo -n "🏡"
   else
-    echo -n '🏢'
+    echo -n "🏢"
   fi
 }
 
@@ -41,4 +41,4 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=auto
 
-export PS1="\`identifier\` [\u:\w]`current_ruby`|`current_elixir`|`current_node``git_work` \`linebreak\`"
+export PS1='$(identifier) [\u:\w]$(current_ruby)|$(current_elixir)|$(current_node)$(git_work) $(linebreak)'
