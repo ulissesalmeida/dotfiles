@@ -1,8 +1,10 @@
 brew 'bash'
 brew 'bash-completion'
+brew 'autojump'
 brew 'git'
 brew 'hub'
 brew 'ack'
+brew 'wxmac'
 
 # For ASDF node
 brew 'gpg'
@@ -25,5 +27,4 @@ brew 'mas'
 mas 'Deckset', id: 847496013
 mas 'Keynote', id: 409183694
 mas 'Wunderlist', id: 410628904
-mas 'Twitter', id: 409789998
 mas 'CalendarFree', id: 415181149

@@ -13,6 +13,7 @@
 	default = simple
 [pull]
 	default = rebase
+	rebase = true
 [fetch]
 	prune = true
 [alias]
