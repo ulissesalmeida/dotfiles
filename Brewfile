@@ -4,6 +4,7 @@ brew 'autojump'
 brew 'git'
 brew 'hub'
 brew 'ack'
+brew 'autoconf'
 brew 'wxmac'
 
 # For ASDF node
