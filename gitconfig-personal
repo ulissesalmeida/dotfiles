@@ -1,3 +1,6 @@
 [user]
 	name = Ulisses Almeida
 	email = anizark@gmail.com
+	signingkey = BCDFF7819850DC3DDEB17383BB3E91256FF57DD4
+[commit]
+	gpgsign = true

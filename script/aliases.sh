@@ -1,3 +1,5 @@
 alias json_pretty='python -m json.tool'
-alias reload='source ~/.profile'
+alias reload='source ~/.zprofile'
 alias listen_ports='lsof -Pn -i4 | grep LISTEN'
+alias python='python3.7'
+alias pip='pip3.7'
