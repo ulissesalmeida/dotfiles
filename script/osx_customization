@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Load utils
-source ${HOME}/.dotfiles/script/utils
+source ${HOME}/dotfiles/script/utils
 
 ###############################################################################
 # OS X Customizations

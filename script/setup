@@ -1,9 +1,9 @@
 #!/bin/bash
 
 link_files() {
-  for i in $HOME/.dotfiles/*; do
+  for i in $HOME/dotfiles/*; do
     local base_name="$(basename $i)"
-    [[ $base_name =~ ^(LICENSE|script|bin)$ ]] && continue
+    [[ $base_name =~ ^(LICENSE|script|bin|init.el)$ ]] && continue
     echo "👉 Linking $base_name..."
     [[ -h $HOME/.$base_name ]] && rm $HOME/.$base_name
     ln -sf $i $HOME/.$base_name
@@ -11,7 +11,12 @@ link_files() {
 
   echo "👉 Linking bin..."
   [[ -h $HOME/bin ]] && rm $HOME/bin
-  ln -sf $HOME/.dotfiles/bin $HOME/bin
+  ln -sf $HOME/dotfiles/bin $HOME/bin
+
+  echo "👉 Linking emacs.d/init.el..."
+  mkdir -p $HOME/.emacs.d
+  [[ -h $HOME/.emacs.d/init.el ]] && rm $HOME/.emacs.d/init.el
+  ln -sf $HOME/dotfiles/init.el $HOME/.emacs.d/init.el
 }
 
 create_directories() {
@@ -25,6 +30,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 link_files
 create_directories
 
-$HOME/.dotfiles/script/osx_customization
+$HOME/dotfiles/script/osx_customization
 
 echo "🎉  Done!"
