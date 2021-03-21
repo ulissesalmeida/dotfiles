@@ -29,3 +29,7 @@
   diff = true
 [apply]
   whitespace = fix
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
