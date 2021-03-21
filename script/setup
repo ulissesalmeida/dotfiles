@@ -3,7 +3,7 @@
 link_files() {
   for i in $HOME/dotfiles/*; do
     local base_name="$(basename $i)"
-    [[ $base_name =~ ^(Brewfile|LICENSE|script|bin|init.el))$ ]] && continue
+    [[ $base_name =~ ^(Brewfile|LICENSE|script|bin|init.el)$ ]] && continue
     echo "👉 Linking $base_name..."
     [[ -h $HOME/.$base_name ]] && rm $HOME/.$base_name
     ln -sf $i $HOME/.$base_name
@@ -20,7 +20,7 @@ link_files() {
 
   echo "👉 Linking Brewfile..."
   [[ -h $HOME/Brewfile ]] && rm $HOME/Brewfile
-  ln -sf $HOME/.dotfiles/Brewfile $HOME/Brewfile
+  ln -sf $HOME/dotfiles/Brewfile $HOME/Brewfile
 
 }
 
