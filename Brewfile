@@ -27,6 +27,10 @@ cask 'google-cloud-sdk'
 cask 'notion'
 cask 'wkhtmltopdf'
 cask 'zoom'
+cask '1password'
+
+tap 'railwaycat/emacsmacport'
+cask 'emacs-mac'
 
 brew 'mas'
 mas 'Deckset', id: 847496013
