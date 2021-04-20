@@ -17,7 +17,7 @@
  '(custom-safe-themes
    '("8f5a7a9a3c510ef9cbb88e600c0b4c53cdcdb502cfe3eb50040b7e13c6f4e78e" "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" default))
  '(package-selected-packages
-   '(dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
+   '(ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -25,6 +25,7 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Show a preview of commands shortcuts(try ctrl+x)
 (use-package which-key
   :ensure t
   :config (which-key-mode))
@@ -42,10 +43,12 @@
   :config
   (load-theme 'doom-one))
 
+;; Noice bottom status bar
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
 
+;; Icons for the noice status bar
 (use-package all-the-icons
   :ensure t)
 
@@ -69,21 +72,42 @@
     )
   :config
   (dashboard-setup-startup-hook))
-  
+
+(use-package ivy
+  :ensure t
+  :config (ivy-mode 1))
+
+;; Hide statup message
 (setq inhibit-startup-message t)
 
 (tool-bar-mode -1)
 
 (menu-bar-mode -1)
 
+;; Hilight the current line
 (global-hl-line-mode +1)
 
+;; Delete the current selection when typing new things
 (delete-selection-mode 1)
 
+;; Display line numbers only for programming files
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
+;; Highlight the parens when cursor is on it
 (show-paren-mode 1)
 
-(setq ido-everywhere t)
-(setq ido-enable-flex-matching t)
-(ido-mode t)
+;; Set font size
+(set-face-attribute 'default nil :height 200)
+
+;; Make left option,cmd works as mac default
+;; Use the right option as Meta
+(setq mac-right-option-modifier 'meta
+      mac-command-modifier 'none
+      mac-option-modifier 'none)
+
+;; Follow symbolic links without asking
+(setq vc-follow-symlinks t)
+
+;; (setq ido-everywhere t)
+;; (setq ido-enable-flex-matching t)
+;; (ido-mode t)
