@@ -17,7 +17,7 @@
  '(custom-safe-themes
    '("8f5a7a9a3c510ef9cbb88e600c0b4c53cdcdb502cfe3eb50040b7e13c6f4e78e" "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" default))
  '(package-selected-packages
-   '(ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
+   '(counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -75,7 +75,23 @@
 
 (use-package ivy
   :ensure t
+  :pin "melpa-stable"
+  :init
+  (progn
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-count-format "(%d/%d) ")
+    )
   :config (ivy-mode 1))
+
+(use-package swiper
+  :ensure t
+  :pin "melpa-stable"
+  :config (global-set-key "\C-s" 'swiper))
+
+(use-package counsel
+  :ensure t
+  :pin "melpa-stable"
+  :config (counsel-mode 1))
 
 ;; Hide statup message
 (setq inhibit-startup-message t)
