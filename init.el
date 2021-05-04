@@ -17,7 +17,7 @@
  '(custom-safe-themes
    '("8f5a7a9a3c510ef9cbb88e600c0b4c53cdcdb502cfe3eb50040b7e13c6f4e78e" "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" default))
  '(package-selected-packages
-   '(counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
+   '(treemacs-projectile treemacs counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -30,6 +30,7 @@
   :ensure t
   :config (which-key-mode))
 
+;; Auto complete
 (use-package company
   :ensure t
   :config (add-hook 'after-init-hook 'global-company-mode))
@@ -54,44 +55,61 @@
 
 (use-package projectile
   :ensure t
+  :bind-keymap
+  ("C-x p" . projectile-command-map)
   :config
-  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
-  (projectile-mode +1))
+  (projectile-mode +1)
+  (setq projectile-completion-system 'ivy))
 
+;; Add nice startup dashboard
 (use-package dashboard
   :ensure t
   :pin "melpa-stable"
   :init
-  (progn
-    (setq dashboard-items '((recents . 3)
-			   (projects . 3)
-			   (bookmarks . 5)))
-    (setq dashboard-show-shortcuts t)
-    (setq dashboard-set-file-icons t)
-    (setq dashboard-heading-icons t)
-    )
+  (setq dashboard-items '((recents . 5)
+			  (projects . 5)
+			  (bookmarks . 5)))
+  (setq dashboard-show-shortcuts t)
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-heading-icons t)
   :config
   (dashboard-setup-startup-hook))
 
+;; Better search results interface
 (use-package ivy
   :ensure t
   :pin "melpa-stable"
   :init
-  (progn
-    (setq ivy-use-virtual-buffers t)
-    (setq ivy-count-format "(%d/%d) ")
-    )
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
   :config (ivy-mode 1))
 
+;; Better search in the file interface
 (use-package swiper
   :ensure t
   :pin "melpa-stable"
   :config (global-set-key "\C-s" 'swiper))
 
+;; Apply ivy search result in many emacs commands
 (use-package counsel
   :ensure t
   :pin "melpa-stable"
   :config (counsel-mode 1))
+
+;; Nice tree file visualisation on the left panel
+(use-package treemacs
+  :pin "melpa-stable"
+  :ensure t
+  :bind
+  ("C-9" . treemacs)
+  ("C-0" . treemacs-select-window)
+  :config
+  (setq treemacs-is-never-other-window t))
+
+(use-package treemacs-projectile
+  :pin "melpa-stable"
+  :after treemacs projectile
+  :ensure t)
 
 ;; Hide statup message
 (setq inhibit-startup-message t)
@@ -124,6 +142,13 @@
 ;; Follow symbolic links without asking
 (setq vc-follow-symlinks t)
 
-;; (setq ido-everywhere t)
-;; (setq ido-enable-flex-matching t)
-;; (ido-mode t)
+;; Save bookmark file for every modification
+(setq bookmark-save-flag 1)
+
+;; Save emacs support files in other directory
+(setq auto-save-file-name-transforms
+      `((".*" ,(concat user-emacs-directory "auto-save/") t)))
+
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+                 (concat user-emacs-directory "backups")))))

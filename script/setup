@@ -18,6 +18,10 @@ link_files() {
   [[ -h $HOME/.emacs.d/init.el ]] && rm $HOME/.emacs.d/init.el
   ln -sf $HOME/dotfiles/init.el $HOME/.emacs.d/init.el
 
+  echo "👉 Linking emacs.d/bookmarks..."
+  [[ -h $HOME/.emacs.d/bookmarks ]] && rm $HOME/.emacs.d/bookmarks
+  ln -sf $HOME/dotfiles/bookmarks $HOME/.emacs.d/bookmarks
+
   echo "👉 Linking Brewfile..."
   [[ -h $HOME/Brewfile ]] && rm $HOME/Brewfile
   ln -sf $HOME/dotfiles/Brewfile $HOME/Brewfile
