@@ -17,7 +17,7 @@
  '(custom-safe-themes
    '("8f5a7a9a3c510ef9cbb88e600c0b4c53cdcdb502cfe3eb50040b7e13c6f4e78e" "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" default))
  '(package-selected-packages
-   '(expand-region treemacs-all-the-icons treemacs-projectile treemacs counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
+   '(centaur-tabs expand-region treemacs-all-the-icons treemacs-projectile treemacs counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -119,6 +119,27 @@
   :bind
   ("C-=" . er/expand-region)
   ("C--" . er/contract-region))
+
+(use-package centaur-tabs
+  :ensure t
+  :custom
+  (centaur-tabs-style "rounded")
+  (centaur-tabs-height 24)
+  (centaur-tabs-set-icons t)
+  (centaur-tabs-gray-out-icons 'buffer)
+  (centaur-tabs-set-bar 'left)
+  (centaur-tabs-set-modified-marker t)
+  (centaur-tabs-modified-marker "·")
+  (centaur-tabs-cycle-scope 'tabs)
+  :config
+  (centaur-tabs-headline-match)
+  (centaur-tabs-group-by-projectile-project)
+  (centaur-tabs-mode t)
+  :bind
+  ("C-," . centaur-tabs-backward)
+  ("C-." . centaur-tabs-forward)
+  ("C-c C-j" . centaur-tabs-backward-group)
+  ("C-c C-k" . centaur-tabs-forward-group))
 
 ;; Hide statup message
 (setq inhibit-startup-message t)
