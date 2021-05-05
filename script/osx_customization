@@ -26,10 +26,6 @@ defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 # Turn off keyboard illumination when computer is not used for 30 seconds"
 defaults write com.apple.BezelServices kDimTime -int 30
 
-# Make keyboard cursor faster
-defaults write -g InitialKeyRepeat -int 15
-defaults write -g KeyRepeat -int 0.02
-
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 

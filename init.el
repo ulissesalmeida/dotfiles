@@ -17,7 +17,7 @@
  '(custom-safe-themes
    '("8f5a7a9a3c510ef9cbb88e600c0b4c53cdcdb502cfe3eb50040b7e13c6f4e78e" "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" default))
  '(package-selected-packages
-   '(treemacs-projectile treemacs counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
+   '(expand-region treemacs-all-the-icons treemacs-projectile treemacs counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -41,8 +41,13 @@
 
 (use-package doom-themes
   :ensure t
+  ;; Loading doom theme for treemacs not working
+  ;; :custom
+  ;; (doom-themes-treemacs-theme "doom-colors")
   :config
-  (load-theme 'doom-one))
+  (load-theme 'doom-one t)
+  ;; (doom-themes-treemacs-config)
+  )
 
 ;; Noice bottom status bar
 (use-package doom-modeline
@@ -98,7 +103,6 @@
 
 ;; Nice tree file visualisation on the left panel
 (use-package treemacs
-  :pin "melpa-stable"
   :ensure t
   :bind
   ("C-9" . treemacs)
@@ -107,9 +111,14 @@
   (setq treemacs-is-never-other-window t))
 
 (use-package treemacs-projectile
-  :pin "melpa-stable"
   :after treemacs projectile
   :ensure t)
+
+(use-package expand-region
+  :ensure t
+  :bind
+  ("C-=" . er/expand-region)
+  ("C--" . er/contract-region))
 
 ;; Hide statup message
 (setq inhibit-startup-message t)
