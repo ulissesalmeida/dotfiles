@@ -33,7 +33,8 @@
 ;; Auto complete
 (use-package company
   :ensure t
-  :config (add-hook 'after-init-hook 'global-company-mode))
+  :hook
+  (after-init . global-company-mode))
 
 (use-package alchemist
   :pin "melpa-stable"
@@ -114,12 +115,14 @@
   :after treemacs projectile
   :ensure t)
 
+;; Quick selection
 (use-package expand-region
   :ensure t
   :bind
   ("C-=" . er/expand-region)
   ("C--" . er/contract-region))
 
+;; Add top tabs to Emacs Editor
 (use-package centaur-tabs
   :ensure t
   :custom
