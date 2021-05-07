@@ -17,7 +17,7 @@
  '(custom-safe-themes
    '("8f5a7a9a3c510ef9cbb88e600c0b4c53cdcdb502cfe3eb50040b7e13c6f4e78e" "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" default))
  '(package-selected-packages
-   '(centaur-tabs expand-region treemacs-all-the-icons treemacs-projectile treemacs counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
+   '(lsp-ui lsp-mode flycheck centaur-tabs expand-region treemacs-all-the-icons treemacs-projectile treemacs counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,10 +35,6 @@
   :ensure t
   :hook
   (after-init . global-company-mode))
-
-(use-package alchemist
-  :pin "melpa-stable"
-  :ensure t)
 
 (use-package doom-themes
   :ensure t
@@ -144,6 +140,30 @@
   ("C-c C-j" . centaur-tabs-backward-group)
   ("C-c C-k" . centaur-tabs-forward-group))
 
+;; Syntax checker (credo style)
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode))
+
+;; lsp-mode: IDE kinda for emacs
+(use-package lsp-mode
+  :ensure t
+  :pin "melpa-stable"
+  :init
+  (add-to-list 'exec-path "~/.elixir_ls")
+  :custom
+  (lsp-keymap-prefix "C-l")
+  :hook
+  (lsp-mode . lsp-enable-which-key-integration)
+  (elixir-mode . lsp)
+  :commands lsp)
+
+(use-package lsp-ui
+  :ensure t
+  :pin "melpa-stable"
+  :commands lsp-ui-mode)
+
 ;; Hide statup message
 (setq inhibit-startup-message t)
 
@@ -165,6 +185,9 @@
 
 ;; Set font size
 (set-face-attribute 'default nil :height 200)
+
+;; Set tab size
+(setq default-tab-width 2)
 
 ;; Make left option,cmd works as mac default
 ;; Use the right option as Meta
