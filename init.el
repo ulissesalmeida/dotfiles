@@ -17,7 +17,7 @@
  '(custom-safe-themes
    '("8f5a7a9a3c510ef9cbb88e600c0b4c53cdcdb502cfe3eb50040b7e13c6f4e78e" "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" default))
  '(package-selected-packages
-   '(lsp-ui lsp-mode flycheck centaur-tabs expand-region treemacs-all-the-icons treemacs-projectile treemacs counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
+   '(lsp-treemacs ls-treemacs lsp-ivy lsp-ui lsp-mode flycheck centaur-tabs expand-region treemacs-all-the-icons treemacs-projectile treemacs counsel ivy dashboard projectile doom-modeline doom-themes alchemist which-key use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -162,7 +162,17 @@
 (use-package lsp-ui
   :ensure t
   :pin "melpa-stable"
+  :custom
+  (lsp-ui-doc-enable nil)
   :commands lsp-ui-mode)
+
+(use-package lsp-ivy
+  :ensure t
+  :commands (lsp-ivy-workspace-symbol))
+
+(use-package lsp-treemacs
+  :ensure t
+  :commands (lsp-treemacs-error-list))
 
 ;; Hide statup message
 (setq inhibit-startup-message t)
