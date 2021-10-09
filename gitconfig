@@ -17,7 +17,7 @@
 [fetch]
 	prune = true
 [alias]
-	ptec = !git config user.email ulisses.almeida@plataformatec.com.br
+	duffel = !git config user.email ulisses@duffel.com
 	save = !git add -A && git commit -m wip
 	undo = reset --soft HEAD^
 	patch = add -p

@@ -6,6 +6,7 @@ brew 'gh'
 brew 'ack'
 brew 'autoconf'
 brew 'wxmac'
+brew 'fswatch'
 
 # For ASDF node
 brew 'gpg'

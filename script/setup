@@ -48,7 +48,6 @@ install_elixir_ls() {
 
     remove_file_if_exists $HOME/.elixir_ls/release.zip
 
-    echo "DOWNLOAD PORRA"
     curl -L https://github.com/elixir-lsp/elixir-ls/releases/download/v0.7.0/elixir-ls.zip > $HOME/.elixir_ls/release.zip
 
     unzip -o $HOME/.elixir_ls/release.zip -d $HOME/.elixir_ls

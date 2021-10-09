@@ -1,6 +1,6 @@
 [user]
 	name = Ulisses Almeida
 	email = ulisses@duffel.com
-  signingkey = F0F08AE3C069AC2ECC1F119C554D73C528D7A257
+  signingkey = 10B1E5E9239482C3E04C0A897E3628369CE4882E
 [commit]
   gpgsign = true
