@@ -31,6 +31,7 @@ cask 'wkhtmltopdf'
 cask 'zoom'
 cask '1password'
 cask 'steam'
+cask 'telegram'
 
 tap 'railwaycat/emacsmacport'
 cask 'emacs-mac'
