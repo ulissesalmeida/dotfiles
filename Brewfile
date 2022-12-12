@@ -5,7 +5,7 @@ brew 'git'
 brew 'gh'
 brew 'ack'
 brew 'autoconf'
-brew 'wxmac'
+brew 'wxwidgets'
 brew 'fswatch'
 
 # For ASDF node
@@ -20,6 +20,7 @@ cask 'imageoptim'
 cask 'iterm2'
 cask 'spotify'
 cask 'grammarly'
+cask 'languagetool'
 cask 'skype'
 cask 'slack'
 cask 'cloudapp'
@@ -29,13 +30,13 @@ cask 'notion'
 cask 'wkhtmltopdf'
 cask 'zoom'
 cask '1password'
+cask 'steam'
 
 tap 'railwaycat/emacsmacport'
 cask 'emacs-mac'
 
 brew 'mas'
 mas 'Deckset', id: 847496013
-mas 'LastPass', id: 926036361
 mas 'The Unarchiver', id: 425424353
 mas 'Calendars', id: 415181149
 mas 'DigiDoc4 Client', id: 1370791134
