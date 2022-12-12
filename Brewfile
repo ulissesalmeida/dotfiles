@@ -30,6 +30,7 @@ cask 'notion'
 cask 'wkhtmltopdf'
 cask 'zoom'
 cask '1password'
+cask 'raycast'
 cask 'steam'
 cask 'telegram'
 
