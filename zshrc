@@ -101,3 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 SPACESHIP_DOCKER_SHOW="false"
+SPACESHIP_DOCKER_CONTEXT_SHOW="false"
+SPACESHIP_DOCKER_COMPOSE_SHOW="false"
+SPACESHIP_GCLOUD_SHOW="false"
+export PATH="/usr/local/sbin:$PATH"
