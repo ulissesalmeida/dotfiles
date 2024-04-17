@@ -99,9 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 SPACESHIP_DOCKER_SHOW="false"
 SPACESHIP_DOCKER_CONTEXT_SHOW="false"
 SPACESHIP_DOCKER_COMPOSE_SHOW="false"
 SPACESHIP_GCLOUD_SHOW="false"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"

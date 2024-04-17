@@ -22,3 +22,5 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 . $HOME/dotfiles/script/aliases.sh
 
 export GPG_TTY=$(tty)
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
