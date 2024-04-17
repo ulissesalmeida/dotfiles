@@ -8,16 +8,15 @@ export EDITOR="code"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Auto Jump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
 
 # ASDF
 . $HOME/.asdf/completions/asdf.bash
 . $HOME/.asdf/asdf.sh
 
 # Google Cloud
-. /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-. /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 . $HOME/dotfiles/script/aliases.sh
 
