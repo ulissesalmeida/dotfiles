@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
@@ -21,5 +23,3 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 . $HOME/dotfiles/script/aliases.sh
 
 export GPG_TTY=$(tty)
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
