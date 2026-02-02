@@ -1,5 +1,9 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# ASDF
+
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
@@ -11,10 +15,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Auto Jump
 [ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
-
-# ASDF
-. $HOME/.asdf/completions/asdf.bash
-. $HOME/.asdf/asdf.sh
 
 # Google Cloud
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"

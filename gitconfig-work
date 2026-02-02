@@ -1,6 +1,6 @@
 [user]
-	name = Ulisses Almeida
-	email = ulisses@duffel.com
-  signingkey = 10B1E5E9239482C3E04C0A897E3628369CE4882E
+	name = Ulisses Herrera
+	email = ulisses.herrera@breakroom.cc
+  signingkey = E942575BA6FF874FE473401FBCAC657CF6CCF7E7
 [commit]
   gpgsign = true

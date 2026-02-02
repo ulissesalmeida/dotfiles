@@ -10,43 +10,33 @@ brew 'wxwidgets'
 brew 'libxslt'
 brew 'fop'
 brew 'fswatch'
+brew 'asdf'
 
 # For ASDF node
 brew 'gpg'
 
-cask 'alfred'
-cask 'visual-studio-code'
-cask 'dropbox'
 cask 'firefox'
 cask 'google-chrome'
+cask 'google-drive'
 cask 'imageoptim'
 cask 'iterm2'
 cask 'spotify'
-cask 'grammarly'
-cask 'languagetool'
-cask 'skype'
+cask 'languagetool-desktop'
 cask 'slack'
-cask 'cloudapp'
-cask 'docker'
-cask 'google-cloud-sdk'
+cask 'docker-desktop'
+cask 'gcloud-cli'
 cask 'notion'
-cask 'wkhtmltopdf'
 cask 'zoom'
 cask '1password'
 cask '1password/tap/1password-cli'
 cask 'raycast'
 cask 'steam'
 cask 'telegram'
+cask 'cursor'
+cask 'zed'
+cask 'claude-code'
 
-tap 'railwaycat/emacsmacport'
-cask 'emacs-mac'
+cask 'emacs-app'
 
 brew 'mas'
-mas 'Deckset', id: 847496013
 mas 'The Unarchiver', id: 425424353
-mas 'Calendars', id: 415181149
-mas 'DigiDoc4 Client', id: 1370791134
-mas 'TeRa', id: 1243347809
-mas 'Magnet', id: 441258766
-mas 'Keynote', id: 409183694
-mas 'Xcode', id: 497799835

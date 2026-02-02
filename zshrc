@@ -70,7 +70,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git asdf zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,6 +104,7 @@ SPACESHIP_DOCKER_CONTEXT_SHOW="false"
 SPACESHIP_DOCKER_COMPOSE_SHOW="false"
 SPACESHIP_GCLOUD_SHOW="false"
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
