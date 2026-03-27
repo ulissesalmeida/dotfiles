@@ -1,6 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore
-	editor = "emacs -nw"
+	editor = "nvim"
 [includeIf "gitdir:~/"]
   path = .gitconfig-personal
 [includeIf "gitdir:~/projects/work/"]
@@ -19,7 +19,7 @@
 [fetch]
 	prune = true
 [alias]
-	duffel = !git config user.email ulisses@duffel.com
+	breakroom = !git config user.email ulisses.herrera@breakroom.cc
 	save = !git add -A && git commit -m wip
 	undo = reset --soft HEAD^
 	patch = add -p

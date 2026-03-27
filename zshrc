@@ -108,3 +108,5 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

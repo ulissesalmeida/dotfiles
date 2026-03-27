@@ -11,11 +11,17 @@ brew 'libxslt'
 brew 'fop'
 brew 'fswatch'
 brew 'asdf'
+brew 'neovim'
 
 # For ASDF node
 brew 'gpg'
 
+# For flox
+
+brew 'nss'
+
 cask 'firefox'
+cask 'discord'
 cask 'google-chrome'
 cask 'google-drive'
 cask 'imageoptim'

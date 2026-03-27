@@ -9,7 +9,7 @@ autoload -Uz compinit && compinit
 
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export EDITOR="code"
+export EDITOR="nvim"
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 

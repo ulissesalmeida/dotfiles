@@ -1,6 +1,6 @@
 [user]
 	name = Ulisses Herrera
 	email = ulisses.herrera@breakroom.cc
-  signingkey = E942575BA6FF874FE473401FBCAC657CF6CCF7E7
+    signingkey = E942575BA6FF874FE473401FBCAC657CF6CCF7E7
 [commit]
-  gpgsign = true
+    gpgsign = true
