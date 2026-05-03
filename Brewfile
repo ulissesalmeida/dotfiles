@@ -3,6 +3,7 @@ brew 'autojump'
 brew 'openssl'
 brew 'git'
 brew 'git-lfs'
+brew 'git-delta'
 brew 'gh'
 brew 'ack'
 brew 'autoconf'
@@ -15,10 +16,6 @@ brew 'neovim'
 
 # For ASDF node
 brew 'gpg'
-
-# For flox
-
-brew 'nss'
 
 cask 'firefox'
 cask 'discord'
@@ -40,9 +37,6 @@ cask 'steam'
 cask 'telegram'
 cask 'cursor'
 cask 'zed'
-cask 'claude-code'
-
-cask 'emacs-app'
 
 brew 'mas'
 mas 'The Unarchiver', id: 425424353
